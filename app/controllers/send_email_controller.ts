@@ -1,13 +1,14 @@
-import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+import env from '#start/env'
+import { HttpContext } from '@adonisjs/core/http'
 import Mailjet from 'node-mailjet'
-
 export default class EmailsController {
-  async sendEmail({ request }: HttpContextContract) {
+  async sendEmail({ request }: HttpContext) {
     const data = request.all()
     const { name, email, message } = data
-    const mailjet = Mailjet.apiConnect(
-      process.env.MAILJET_API_KEY_PUBLIC,
-      process.env.MAILJET_API_KEY_PRIVATE
+
+    const mailjet = (Mailjet as any).apiConnect(
+      env.get('MAILJET_API_KEY_PUBLIC'),
+      env.get('MAILJET_API_KEY_PRIVATE')
     )
     const sendEmail = mailjet.post('send', { version: 'v3.1' }).request({
       Messages: [
