@@ -16,7 +16,7 @@ import { Ignitor, prettyPrintError } from '@adonisjs/core'
  * URL to the application root. AdonisJS need it to resolve
  * paths to file and directories for scaffolding commands
  */
-const APP_ROOT = new URL('../', import.meta.url)
+const APP_ROOT = new URL('../../', import.meta.url)
 
 /**
  * The importer is used to import files in context of the
