@@ -7,7 +7,10 @@
 |
 */
 
-const sendEmail = () => import('#controllers/send_email_controller')
 import router from '@adonisjs/core/services/router'
 
-router.post('/sendEmail', [sendEmail, 'sendEmail'])
+router.get('/', async () => {
+  return {
+    hello: 'world',
+  }
+})

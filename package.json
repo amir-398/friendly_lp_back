@@ -1,11 +1,11 @@
 {
-  "name": "friendly_lp_back",
+  "name": "d",
   "version": "0.0.0",
   "private": true,
   "type": "module",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "node build/bin/server.js",
+    "start": "node bin/server.js",
     "build": "node ace build",
     "dev": "node ace serve --watch",
     "test": "node ace test",
@@ -42,7 +42,6 @@
     "@japa/runner": "^3.1.4",
     "@swc/core": "^1.4.16",
     "@types/node": "^20.12.7",
-    "@types/node-mailjet": "^3.3.12",
     "eslint": "^8.57.0",
     "hot-hook": "^0.2.1",
     "pino-pretty": "^11.0.0",
@@ -56,7 +55,6 @@
     "@adonisjs/cors": "^2.2.1",
     "@adonisjs/lucid": "^20.5.1",
     "@vinejs/vine": "^2.0.0",
-    "node-mailjet": "^6.0.5",
     "reflect-metadata": "^0.2.2"
   },
   "hotHook": {
