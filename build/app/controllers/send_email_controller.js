@@ -1,9 +1,10 @@
+import env from '#start/env';
 import Mailjet from 'node-mailjet';
 export default class EmailsController {
     async sendEmail({ request }) {
         const data = request.all();
         const { name, email, message } = data;
-        const mailjet = Mailjet.apiConnect(process.env.MAILJET_API_KEY_PUBLIC, process.env.MAILJET_API_KEY_PRIVATE);
+        const mailjet = Mailjet.apiConnect(env.get('MAILJET_API_KEY_PUBLIC'), env.get('MAILJET_API_KEY_PRIVATE'));
         const sendEmail = mailjet.post('send', { version: 'v3.1' }).request({
             Messages: [
                 {
